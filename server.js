@@ -5,19 +5,14 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 const port = process.env.PORT || 3001
 
-{
-    origin: ['https://localhost:3001',
-        'https://comment-app-mauve.vercel.app/']
-}
-
+// {
+//     origin: ['https://localhost:3001',
+//         'https://comment-app-mauve.vercel.app/'],
+//         methods: ['GET', 'POST'],
+//             credentials: true
+// }
 const app = express();
-app.use(cors({
-    origin: ['https://localhost:3001',
-        'https://comment-app-mauve.vercel.app/'],
-    methods: ['GET', 'POST'],
-    credentials: true
-}
-));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URI);
