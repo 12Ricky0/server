@@ -13,7 +13,7 @@ const port = process.env.PORT || 3001
 const app = express();
 app.use(cors({
     origin: ['https://localhost:3001',
-        'https://server-4ne2.onrender.com'],
+        'https://comment-app-mauve.vercel.app/'],
     methods: ['GET', 'POST'],
     credentials: true
 }
