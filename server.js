@@ -7,7 +7,7 @@ const port = process.env.PORT || 3001
 
 {
     origin: ['https://localhost:3001',
-        'https://server-4ne2.onrender.com']
+        'https://comment-app-mauve.vercel.app/']
 }
 
 const app = express();
