@@ -5,12 +5,19 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 const port = process.env.PORT || 3001
 
+{
+    origin: ['https://localhost:3001',
+        'https://server-4ne2.onrender.com']
+}
 
 const app = express();
 app.use(cors({
     origin: ['https://localhost:3001',
-        'https://server-4ne2.onrender.com']
-}));
+        'https://server-4ne2.onrender.com'],
+    methods: ['GET', 'POST'],
+    credentials: true
+}
+));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URI);
