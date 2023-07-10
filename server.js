@@ -7,7 +7,10 @@ const port = process.env.PORT || 3001
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['https://localhost:3001',
+        'https://server-4ne2.onrender.com']
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URI);
